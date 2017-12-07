@@ -4,7 +4,9 @@
   "description": "Module for connecting any database motor.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "setup": "DEBUG=kiradb:* node setup.js",
+    "lint": "standard",
+    "test": "DEBUG=hackdb:* nyc --reporter=lcov ava test/agent-test.js --verbose"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/hackchan/kiradb/issues"
   },
-  "homepage": "https://github.com/hackchan/kiradb#readme"
+  "homepage": "https://github.com/hackchan/kiradb#readme",
+  "dependencies": {
+    "knex": "^0.14.1",
+    "pg": "^7.4.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.22.15"
+  }
 }
